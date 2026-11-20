@@ -1,152 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Presentación de Embudos | Luis Feliz Caballero</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background-color: #0A0A0A;
-      color: #F0EDE6;
-      font-family: 'Inter', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-    }
-    .hub-container {
-      max-width: 860px;
-      padding: 4rem 2rem;
-      text-align: center;
-      width: 100%;
-    }
-    .hub-eyebrow {
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: #666;
-      margin-bottom: 1.5rem;
-      display: block;
-    }
-    .hub-title {
-      font-family: 'IM Fell English', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 400;
-      color: #E0DDD6;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-    .hub-title em {
-      color: #C8A96E;
-      font-style: italic;
-    }
-    .hub-desc {
-      font-size: 14px;
-      font-weight: 300;
-      color: #888;
-      line-height: 1.7;
-      max-width: 600px;
-      margin: 0 auto 4rem;
-    }
-    .hub-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      text-align: left;
-    }
-    .hub-card {
-      background-color: #060606;
-      border: 0.5px solid #1a1a1a;
-      padding: 2.5rem 2rem;
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      transition: all 0.25s ease;
-    }
-    .hub-card:hover {
-      border-color: #C8A96E;
-      background-color: #0d0b08;
-      transform: translateY(-3px);
-    }
-    .card-title {
-      font-size: 15px;
-      font-weight: 500;
-      color: #F0EDE6;
-      margin-bottom: 0.5rem;
-      letter-spacing: 0.05em;
-    }
-    .card-desc {
-      font-size: 13px;
-      font-weight: 300;
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-      flex-grow: 1;
-    }
-    .card-action {
-      font-size: 10px;
-      font-weight: 600;
-      color: #C8A96E;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      border-top: 0.5px solid #1a1a1a;
-      padding-top: 1.5rem;
-      transition: border-color 0.25s ease;
-    }
-    .hub-card:hover .card-action {
-      border-color: #2a1f0f;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Black Friday Oberstaff · Propuestas de correo</title>
+<style>
+  :root{
+    --bg:#16171d; --card:#1f2027; --border:#2e3039;
+    --text:#ffffff; --muted:#a3a5b0; --pink:#fb3bb8; --pink-dark:#d62a9b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:"Segoe UI",Roboto,Arial,Helvetica,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.5;
+    min-height:100vh;
+    background-image:radial-gradient(ellipse at top right, rgba(251,59,184,.18), transparent 55%),
+                     radial-gradient(ellipse at bottom left, rgba(80,50,200,.18), transparent 55%);
+    background-attachment:fixed;
+  }
+  .wrap{max-width:1000px;margin:0 auto;padding:56px 24px 40px}
+  header{text-align:center;margin-bottom:48px}
+  .brand{font-size:34px;font-weight:800;letter-spacing:-1px}
+  .brand span{color:var(--pink)}
+  .tag{
+    display:inline-block;margin:14px 0 18px;padding:6px 14px;border-radius:999px;
+    background:rgba(251,59,184,.15);color:var(--pink);font-size:13px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;
+  }
+  h1{font-size:clamp(26px,4vw,40px);line-height:1.15;margin-bottom:12px}
+  header p{color:var(--muted);max-width:620px;margin:0 auto;font-size:16px}
 
-    @media (max-width: 768px) {
-      .hub-grid { grid-template-columns: 1fr; }
-      .hub-container { padding: 3rem 1.5rem; }
-    }
-  </style>
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .card{
+    background:var(--card);border:1px solid var(--border);border-radius:16px;
+    padding:26px;display:flex;flex-direction:column;
+    transition:transform .2s, border-color .2s, box-shadow .2s;
+  }
+  .card:hover{transform:translateY(-4px);border-color:var(--pink);box-shadow:0 12px 30px rgba(251,59,184,.15)}
+  .num{
+    width:40px;height:40px;border-radius:50%;background:var(--pink);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:16px;
+  }
+  .card h2{font-size:20px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:14.5px;flex:1;margin-bottom:22px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--pink);color:#fff;text-decoration:none;font-weight:700;font-size:15px;
+    padding:13px 22px;border-radius:999px;transition:background .2s;
+  }
+  .btn:hover{background:var(--pink-dark)}
+  .btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:56px}
+</style>
 </head>
 <body>
+<div class="wrap">
 
-  <div class="hub-container">
-    <span class="hub-eyebrow">Panel de Control Interno</span>
-    <h1 class="hub-title">Presentación de Embudos<br><em>Luis Feliz Caballero</em></h1>
-    <p class="hub-desc">
-      A continuación se presentan las 4 variaciones del embudo de ventas High-Ticket. Cada propuesta está diseñada para anclar el avatar de Luis Feliz Caballero, copywriting persuasivo con storytelling y siguiendo el filo y la brutal honestidad de Gary Halbert. Selecciona una opción para previsualizar el código en vivo.
-    </p>
+  <header>
+    <div class="brand">Oberstaff<span>.</span></div>
+    <div class="tag">Black Friday · Propuestas de correo</div>
+    <h1>Elige una propuesta para verla</h1>
+    <p>Cada tarjeta abre un correo en HTML con su banner, imagen y footer. Se abre en una pestaña nueva.</p>
+  </header>
 
-    <div class="hub-grid">
-      <!-- BOTÓN 1 -->
-      <a href="propuesta-de-landing-page.html" class="hub-card">
-        <span class="card-title">Propuesta 01</span>
-        <span class="card-desc">Ángulo principal. Enfoque agresivo atacando la "cárcel de cristal" del ejecutivo y el espejo psicológico.</span>
-        <span class="card-action">Ver Landing Page →</span>
-      </a>
+  <main class="grid">
 
-      <!-- BOTÓN 2 -->
-      <a href="propuesta-de-landing-page-2.html" class="hub-card">
-        <span class="card-title">Propuesta 02</span>
-        <span class="card-desc">Variación narrativa enfocada en la autoridad técnica, la gestión de capital y el mecanismo de extracción.</span>
-        <span class="card-action">Ver Landing Page →</span>
-      </a>
+    <!-- PROPUESTA 1 · cambia el nombre, la descripción y el archivo si hace falta -->
+    <article class="card">
+      <div class="num">1</div>
+      <h2>Propuesta 1</h2>
+      <p>Correo Black Friday con 300 € menos en el tercer mes de servicio.</p>
+      <a class="btn" href="propuesta-de-landing-page.html" target="_blank" rel="noopener">Ver correo →</a>
+    </article>
 
-      <!-- BOTÓN 3 -->
-      <a href="propuesta-de-landing-page-3.html" class="hub-card">
-        <span class="card-title">Propuesta 03</span>
-        <span class="card-desc">Arquitectura directa diseñada para inversores que buscan autonomía absoluta sin "motivación".</span>
-        <span class="card-action">Ver Landing Page →</span>
-      </a>
+    <!-- PROPUESTA 2 -->
+    <article class="card">
+      <div class="num">2</div>
+      <h2>Propuesta 2</h2>
+      <p>Correo Black Friday con 300 € menos en el tercer mes de servicio.</p>
+      <a class="btn" href="propuesta-de-landing-page-2.html" target="_blank" rel="noopener">Ver correo →</a>
+    </article>
 
-      <!-- BOTÓN 4 -->
-      <a href="propuesta-de-landing-page-4.html" class="hub-card">
-        <span class="card-title">Propuesta 04</span>
-        <span class="card-desc">Variación estructurada para resaltar el radar anti-gurú, el escepticismo y los datos verificables.</span>
-        <span class="card-action">Ver Landing Page →</span>
-      </a>
-    </div>
-  </div>
+    <!-- PROPUESTA 3 -->
+    <article class="card">
+      <div class="num">3</div>
+      <h2>Propuesta 3</h2>
+      <p>Correo Black Friday con 300 € menos en el tercer mes de servicio.</p>
+      <a class="btn" href="propuesta-de-landing-page-3.html" target="_blank" rel="noopener">Ver correo →</a>
+    </article>
 
+    <!-- PROPUESTA 4 (borra este bloque si solo presentas 3) -->
+    <article class="card">
+      <div class="num">4</div>
+      <h2>Propuesta 4</h2>
+      <p>Correo Black Friday con 300 € menos en el tercer mes de servicio.</p>
+      <a class="btn" href="propuesta-de-landing-page-4.html" target="_blank" rel="noopener">Ver correo →</a>
+    </article>
+
+  </main>
+
+  <footer>Documento de revisión interna · Oberstaff</footer>
+</div>
 </body>
 </html>
